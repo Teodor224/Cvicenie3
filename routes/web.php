@@ -11,30 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('test',[
-  'as'=>'test','uses'=>'TestController@testAction'
-]);
-
 Route::get('/show/{id}',[
     'as'=>'show','uses'=>'CRUDController@showAction'
 ]);
 
-Route::get('/insert',[
+Route::post('/insert',[
     'as'=>'insert','uses'=>'CRUDController@insertAction'
 ]);
 
-Route::get('/update/{id}',[
+Route::post('/update/{id}',[
     'as'=>'update','uses'=>'CRUDController@updateAction'
 ]);
 
-Route::get('/delete/{id}',[
+Route::post('/delete/{id}',[
     'as'=>'delete','uses'=>'CRUDController@deleteAction'
 ]);
 
 Route::get('/showAll',[
     'as'=>'showAll','uses'=>'CRUDController@showAllAction'
 ]);
+
+
+Route::get('/getAddUserForm',[
+    'as' => 'getAddUserForm','uses' => 'CRUDController@getAddUserForm'
+]);
+
+Route::get('/showDeleteAction/{id}',[
+    'as'=>'showDeleteAction','uses'=>'CRUDController@showDeleteAction'
+]);
+
